@@ -1,0 +1,2 @@
+alias lofi='nohup streamlink "https://www.youtube.com/watch?v=jfKfPfyJRdk" 480p > /dev/null 2>&1'
+alias update='brew update && brew upgrade && brew cleanup && brew doctor && softwareupdate -l && softwareupdate -d && softwareupdate -i && omz update'

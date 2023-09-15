@@ -1,0 +1,7 @@
+[user]
+	name = Arnau Martin
+	email = 1144200+Kyngo@users.noreply.github.com
+[core]
+	editor = nano
+[init]
+	defaultBranch = master
