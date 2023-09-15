@@ -12,11 +12,6 @@ function copy_dotfiles() {
 }
 
 function install_common_stuff() {
-    # oh my zsh
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    # common aliases
-    ln -s $PWD/aliases.common.sh ~/aliases.common.sh
-
     # NVM
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
     export NVM_DIR="$HOME/.nvm"
@@ -30,6 +25,11 @@ function install_common_stuff() {
         nvm install $i
     done
     nvm alias default 18
+
+    # oh my zsh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    # common aliases
+    ln -s $PWD/aliases.common.sh ~/aliases.common.sh
 }
 
 function install_macos() {
