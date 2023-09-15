@@ -47,9 +47,16 @@ function install_debian() {
         "htop" "curl"
     )
 
+    if [ $EUID -eq 0 ]; then
+        echo "Must NOT run this script as root!"
+        exit 1
+    fi
+    echo "Please enter your sudo password..."
+    sudo -v
+
     for i in ${PKGS[@]}
     do
-        $INSTALL_CMD $i
+        sudo $INSTALL_CMD $i
     done
 
     # SPHP
